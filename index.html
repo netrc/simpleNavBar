@@ -1,0 +1,58 @@
+<html>
+<head>
+
+<script src="https://code.jquery.com/jquery-3.2.1.js"> </script>
+<script src="simpleNavRouter.js"> </script>
+<link rel="stylesheet" type="text/css" href="simpleNavRouter.css">
+
+</head>
+<body>
+
+<div id="AppContainer">
+</div>
+
+<script>
+
+
+var appRoutingData = {
+    // Title
+    "Introduction": { m:"Introduction", f: doIntro },
+    "The Diary":    { m:"",        f: doDiary },  // just index.html
+    "People":       { m:"People", f: doPeople },
+    "Notes":        { m:"Notes", f: doNotes  },
+    "Print":        { m:"Print", f: doPrint, noNav: true }
+};
+
+
+///////////////  PAGE VIEWS
+
+function doIntro( divEl ) {  // just draw what you want
+	divEl.append(`<div id="intro"> <h1> Introduction </h1> stuf.... </div>`);
+}
+function doDiary( divEl ) {  // just draw what you want
+	divEl.append(`<div id="diary"> <h2> the diary </h2> day 1 </div>`);
+}
+function doPeople( divEl ) {  // just draw what you want
+	divEl.append(`<div id="people"> <h3> people </h3> people, people  </div>`);
+}
+function doNotes( divEl ) {  // just draw what you want
+	divEl.append(`<div id="notes"> <h4> notes.... </h4> day n o t e s </div>`);
+}
+function doPrint( divEl ) {  // just draw what you want
+	divEl.append(`<div id="print"> <h2> printable form... </h2> day One </div>`);
+}
+
+
+function initPage () {
+                     // main div id,  nav title,  routing dat
+    simpleNavRouter("AppContainer", "My Diary", appRoutingData);
+    location.href="index.html#Introduction";  // kickoff 
+}
+
+
+window.onload = initPage;
+
+</script>
+
+</body>
+</html>
