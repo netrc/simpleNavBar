@@ -9,6 +9,7 @@ Usage
 * define nav bar items, app functions
 ** func called with div in to which to draw whatever
 * setup router, connected to a div
+** uses window.onhashchange to catch anchor changes
 * ... clicking on nav bar items will trigger app functions, that can show whatever in app div
 
 ```
@@ -23,6 +24,30 @@ var appRoutingData = {
 
 Setup:
 ```
-   // main div id,    nav bar title,   routing data
-snr("testAppDiv",   "testSNR App",    appRoutingData);
+<head>
+<script src="https://code.jquery.com/jquery-3.2.1.js"> </script>
+<script src="simpleNavRouter.js"> </script>
+<link rel="stylesheet" type="text/css" href="simpleNavRouter.css">
+</head>
+
+<body>
+
+<div id="AppContainer">
+</div>
+
+<script>
+function doIntro( divEl ) {  // just draw what you want
+	divEl.append(`<div id="intro"> <h1> Introduction </h1> stuf.... </div>`);
+}
+...
+
+function initPage () {
+                  // main div id,  nav title,  routing dat
+    simpleNavRouter("AppContainer", "My Diary", appRoutingData);
+    location.href="index.html#Introduction";  // kickoff 
+}
+
+window.onload = initPage;
+
+</script>
 ```
