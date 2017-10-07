@@ -31,7 +31,7 @@ var _simpleNavRouter = function ( divID, navTitle, routingData ) {
         appDiv.empty();
 	   // or do "match" via absolute property value expression
         Object.keys(rd).map( k => {
-			//console.debug(`newU match: ${newU}   k: ${k}   ${k}.uRE: ${rd[k].uRE}`);
+			//console.debug(`newU match ?: ${newU}   k: ${k}   ${k}.uRE: ${rd[k].uRE}`);
             if (newU.match(rd[k].uRE)) {
 				if (typeof ga !== 'undefined') {
 					ga('set','page',`/${k['m']}`); // make up pagename for analytics
@@ -51,13 +51,13 @@ var _simpleNavRouter = function ( divID, navTitle, routingData ) {
     navBar.append(`<div class="simpleNavRouterBarTitle"> ${navTitle} </div>`);
 	// set the routing bar items and regular expressions
     Object.keys(rd).map( k => {
-		let re = (rd[k].m==='') ? `index.html$` : `index.html#${rd[k]['m']}`;
-		//console.debug(`setting uRE to ${re}`);
+		let re = `index.html#` + rd[k]['m'] + '$';
+		//console.debug(`setup: setting uRE to ${re}`);
         rd[k].uRE = RegExp(re);
 
         if (! rd[k].hasOwnProperty("noNav")) {  // otherwise, skip nav
-			let e = navBar.append(`<a class="simpleNavRouterBarItem" href="index.html#${k}"> ${k} </a`);
-			// do a click func?   or just set location??
+			let e = navBar.append(`<a class="simpleNavRouterBarItem" href="index.html#${rd[k].m}"> ${k} </a`);
+			// n.b. just setting the href triggers window.onhashchange(), iff it changed!
 		}
 	});
 	containDiv.append(`<div id="innerApp"> </div>`) // for the app
