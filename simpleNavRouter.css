@@ -1,20 +1,29 @@
+#AppContainer {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	}
 
 .simpleNavRouterBar {
 	height: 30px;
 	width: 100%;
-	background: black;
-	font-family: 'Alegreya Sans', sans-serif;
+	background: #111;
+	font-family: sans-serif;
 	color: white;
 	padding-left: 20px;
 	padding-top: 20px;
-	margin: 0;
-	border: 0;
-}
+	}
+.simpleNavRouterBarTitle {
+	display: inline;
+	font-size: larger;
+	padding-right: 20px;
+	}
 .simpleNavRouterBarItem {
-	color: #DDD;
-	margin-left: 50px;
-	padding-top: 20px;
-}
+	color: #DEE;
+	padding-right: 20px;
+	text-decoration: none;
+	}
 .simpleNavRouterBarItem a {
 	text-decoration: none;
-}
+	}
