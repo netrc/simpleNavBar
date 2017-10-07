@@ -21,9 +21,14 @@
 	}
 .simpleNavRouterBarItem {
 	color: #DEE;
-	padding-right: 20px;
+	padding-right: 10px;
+	padding-left: 10px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	border-radius: 5px;
 	text-decoration: none;
 	}
-.simpleNavRouterBarItem a {
-	text-decoration: none;
+.simpleNavRouterBarItem:hover {
+	color: #FFF;
+	background: #444;
 	}
