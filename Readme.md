@@ -7,6 +7,7 @@ Usage
 
 * include/require the module
 * define nav bar items, app functions
+** func called with div in to which to draw whatever
 * setup router, connected to a div
 * ... clicking on nav bar items will trigger app functions, that can show whatever in app div
 
