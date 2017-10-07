@@ -27,7 +27,7 @@ var _simpleNavRouter = function ( divID, navTitle, routingData ) {
 
     let doRouting = function( ) {
         let newU = location.href;
-        console.log(`doR newU: ${newU}`);
+        //console.log(`doR newU: ${newU}`);
         appDiv.empty();
 	   // or do "match" via absolute property value expression
         Object.keys(rd).map( k => {
